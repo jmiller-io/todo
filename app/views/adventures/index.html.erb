@@ -1,4 +1,4 @@
-<h1>Listing all Adventures</h1>
+<h1>Listing Adventures</h1>
 
 <%= link_to 'New Adventure', new_adventure_path %>
 
@@ -17,6 +17,10 @@
       <td><%= adventure.when %></td>
       <td><%= adventure.with %></td>
       <td><%= link_to 'Show', adventure_path(adventure) %></td>
+      <td><%= link_to 'Edit', edit_adventure_path(adventure) %></td>
+      <td><%= link_to 'Destroy', adventure_path(adventure),
+              method: :delete,
+              data: { confirm: 'Are you sure?'} %></td>
     </tr>
     <% end %>
 </table>

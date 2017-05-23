@@ -1,0 +1,40 @@
+<%= form_for @adventure do |f| %>
+  <% if @adventure.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@adventure.errors.count, "error") %>
+prohibited
+       this adventure from being saved:
+      </h2>
+      <ul>
+        <%= @adventure.errors.full_mesages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :what %><br>
+    <%= f.text_field :what %>
+  </p>
+
+  <p>
+    <%= f.label :where %><br>
+    <%= f.text_field :where %>
+  </p>
+
+  <p>
+    <%= f.label :when %><br>
+    <%= f.date_field :when %>
+  </p>
+
+  <p>
+    <%= f.label :with %><br>
+    <%= f.text_field :with %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
