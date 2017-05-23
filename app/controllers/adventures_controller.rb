@@ -9,13 +9,17 @@ class AdventuresController < ApplicationController
   end
 
   def new
+    @adventure = Adventure.new
   end
 
   def create
     @adventure = Adventure.new(adventure_params)
 
-    @adventure.save
-    redirect_to @adventure
+    if @adventure.save
+      redirect_to @adventure
+    else
+      render 'new'
+    end
   end
 
   private

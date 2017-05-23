@@ -1,6 +1,21 @@
 <h1>New Adventure</h1>
 
 <%= form_for :adventure, url: adventures_path do |f| %>
+
+ <% if @adventure.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@adventure.errors.count, "error") %> prohibited
+        this adventure from being saved:
+      </h2>
+      <ul>
+        <% @adventure.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
     <%= f.label :what %><br>
     <%= f.text_field :what %>
@@ -25,3 +40,5 @@
     <%= f.submit %>
   </p>
 <% end %>
+
+<%= link_to 'Back', adventures_path %>
