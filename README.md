@@ -1,5 +1,7 @@
 # README
 
+An application for tracking adventures and activities you want to go on in your state.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
