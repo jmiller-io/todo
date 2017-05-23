@@ -1,0 +1,20 @@
+<h1>Listing all Adventures</h1>
+
+<table>
+  <tr>
+    <th>What</th>
+    <th>Where</th>
+    <th>When</th>
+    <th>With</th>
+  </tr>
+
+  <% @adventures.each do |adventure| %>
+    <tr>
+      <td><%= adventure.what %></td>
+      <td><%= adventure.where %></td>
+      <td><%= adventure.when %></td>
+      <td><%= adventure.with %></td>
+      <td><%= link_to 'Show', adventure_path(adventure) %></td>
+    </tr>
+    <% end %>
+</table>
