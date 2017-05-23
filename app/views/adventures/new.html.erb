@@ -1,0 +1,27 @@
+<h1>New Adventure</h1>
+
+<%= form_for :adventure, url: adventures_path do |f| %>
+  <p>
+    <%= f.label :what %><br>
+    <%= f.text_field :what %>
+  </p>
+
+  <p>
+    <%= f.label :where %><br>
+    <%= f.text_field :where %>
+  </p>
+
+  <p>
+    <%= f.label :when %><br>
+    <%= f.date_field :when %>
+  </p>
+
+  <p>
+    <%= f.label :with %><br>
+    <%= f.text_field :with %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
